@@ -1,0 +1,29 @@
+.item_box {
+  width: 200px;
+  height: 270px;
+  gap: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.default_image_box {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: lightgray;
+  color: whitesmoke;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 12px;
+  display: flex;
+  gap: 3px;
+}
