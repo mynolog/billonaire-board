@@ -1,9 +1,9 @@
 import BillionaireList from '@/components/BillionaireList/BillionaireList'
 import styles from './page.module.css'
 
-export default async function Home() {
+export default function Home() {
   return (
-    <div className={styles.page}>
+    <div className={styles.box}>
       <BillionaireList />
     </div>
   )

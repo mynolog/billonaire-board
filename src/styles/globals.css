@@ -1,8 +1,19 @@
-html,
 body {
   background-color: rgb(52, 52, 52);
   color: whitesmoke;
-  width: 80%;
-  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+p {
+  line-height: 1.5;
 }

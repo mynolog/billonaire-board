@@ -1,0 +1,50 @@
+.box {
+  position: relative;
+}
+
+.go_home {
+  position: absolute;
+  top: 25px;
+  left: 190px;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 50%;
+  transition: opacity 0.3s ease-in-out;
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.about_box,
+.financial_box {
+  width: 60%;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: rgb(45, 45, 49);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.default_image_box {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: lightgray;
+  color: whitesmoke;
+}
+
+.sub_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

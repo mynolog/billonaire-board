@@ -1,9 +1,12 @@
 .item_box {
   width: 200px;
   height: 270px;
-  gap: 7px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .default_image_box {
