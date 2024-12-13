@@ -1,3 +1,5 @@
+// src/app/person/[id]/page.tsx
+
 import { BASE_URL } from '@/app/constants/api'
 import { BillionaireDetail } from '@/types/Billionaire'
 import Image from 'next/image'
@@ -5,21 +7,26 @@ import styles from './page.module.css'
 import FinancialAssetList from '@/components/FinancialAssetList/FinancialAssetList'
 import GoHome from '@/components/GoHome/GoHome'
 
-type DetailProps = {
-  params: {
-    id: string
-  }
+type Params = {
+  id: string
 }
 
-export default async function Detail({ params }: DetailProps) {
-  const { id } = await params
+export default async function Detail({ params }: { params: Params }) {
+  const { id } = params
+
   const res = await fetch(`${BASE_URL}/person/${id}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
   const detail: BillionaireDetail = await res.json()
 
   let imageURL: string | null = detail.squareImage
-  if (imageURL.includes('undefined')) {
+  if (imageURL?.includes('undefined')) {
     imageURL = null
   }
+
   return (
     <div className={styles.box}>
       <GoHome className={styles.go_home} />
@@ -31,7 +38,7 @@ export default async function Detail({ params }: DetailProps) {
         )}
         <h3 className={styles.sub_title}>{detail.name}</h3>
         <div className={styles.bio}>
-          <p>Networth: {detail.netWorth.toFixed(0).slice(0, 3)} Bilion</p>
+          <p>Networth: {detail.netWorth.toFixed(0).slice(0, 3)} Billion</p>
           <p>Country: {detail.country}</p>
           <p>
             Industry:&nbsp;
